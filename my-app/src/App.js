@@ -1,25 +1,22 @@
-import React, {Component, useState, useEffect} from 'react';
+import React from 'react';
 import './App.css';
+import Navbar from './components/views/Navbar';
+import { BrowserRouter as Router, Routes, Route }
+    from 'react-router-dom';
+import Home from './components/views/Home';
+import Next from './components/views/Next';
 
-
+ 
 function App() {
-  const [block, setBlock] = useState(0);
-
-  useEffect(() => { 
-    fetch('http://127.0.0.1:5000/test').then(res => res.json()).then(data => {
-      setBlock(data.text);
-      console.log(data.text);
-    });
-  }, []);
-
-  return (
-    <div className="App">
-      <header className="App-header">
-        <p>Text: {block}</p>
-      </header>
-    </div>
-  );
+    return (
+        <Router>
+            <Navbar />
+            <Routes>
+                <Route exact path='/' element={<Home />} />
+                <Route path='/Next' element={<Next />} />
+            </Routes>
+        </Router>
+    );
 }
-
-
+ 
 export default App;

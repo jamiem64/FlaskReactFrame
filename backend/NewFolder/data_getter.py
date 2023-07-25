@@ -15,4 +15,12 @@ def get_periodic_dict():
 def get_periodic_table():
     return periodic.groups
 
+def TEST_get_string_elems():
+    output = ""
+    for i in range(len(periodic.names)):
+        output += periodic.names[i] + ", "
+
+    return output
+
+
 get_periodic_dict()
