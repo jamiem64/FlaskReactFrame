@@ -10,9 +10,14 @@ cors = CORS(app)
 app.config['CORS_HEADERS'] = 'Content-Type'
 
 @app.route("/test")
-def hello():
+def test():
   text_str = data_getter.TEST_get_string_elems()
-  return jsonify({'text': text_str})
+  return jsonify({'output': text_str})
+
+@app.route("/PeriodicElemsDict")
+def PeriodicElemsDict():
+  output = data_getter.get_periodic_dict()
+  return jsonify({'output': output})
 
 if __name__ == "__main__":
   app.run()

@@ -4,7 +4,7 @@ import Navbar from './components/views/Navbar';
 import { BrowserRouter as Router, Routes, Route }
     from 'react-router-dom';
 import Home from './components/views/Home';
-import Next from './components/views/Next';
+import Elements from './components/views/Elements';
 
  
 function App() {
@@ -13,7 +13,7 @@ function App() {
             <Navbar />
             <Routes>
                 <Route exact path='/' element={<Home />} />
-                <Route path='/Next' element={<Next />} />
+                <Route path='/Elements' element={<Elements />} />
             </Routes>
         </Router>
     );
