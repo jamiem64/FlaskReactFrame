@@ -1,5 +1,15 @@
 .App {
   text-align: center;
+  padding-top: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  /* color: rgb(188, 175, 111); */
+  /* background-color: rgb(188, 175, 111); */
+  height: 100vh;
+  width: 100vw;
 }
 
 .App-logo {
@@ -35,4 +45,242 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.parent {
+  display: flex;
+  flex-wrap: wrap;
+  /* margin-top: 50px; */
+}
+
+.ElemTile {
+  background-color: rgb(64, 86, 171);
+  color: lightgrey;
+  border-radius: 10px;
+  margin-right: 10px;
+  margin-bottom: 10px;
+  width: 100px;
+  height: 100px;
+  text-align: center;
+  font-size: 12px;
+}
+
+.Navbar-Button {
+  background-color: #4CAF50;
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+
+
+
+.Main-Container {
+  padding-top: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  /* color: rgb(188, 175, 111); */
+  background-color: rgb(188, 175, 111);
+  height: 100vh;
+}
+
+.Main-Header {
+  font-size: 50px;
+  font-weight: bold;
+  color: rgb(0, 0, 0);
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  background-color: rgb(188, 175, 111);
+  padding-bottom: 10%;
+}
+
+.Main-Text-Entry-Box {
+  width: 600px;
+  height: 20%;
+  font-size: 20px;
+  font-weight: bold;
+  color: rgb(0, 0, 0);
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  background-color: rgb(188, 175, 111);
+  border: 2px solid rgb(0, 0, 0);
+  border-radius: 5px;
+  padding-left: 10px;
+}
+
+.Main-Form-Width {
+  width: 600px;
+  height: 20%;
+  font-size: 20px;
+  font-weight: bold;
+  color: rgb(0, 0, 0);
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  background-color: rgb(188, 175, 111);
+  /* border: 2px solid rgb(0, 0, 0); */
+  border-radius: 5px;
+  padding-left: 10px;
+}
+
+.Main-Submit-Button-Frame {
+  padding-top: 10px;
+
+}
+
+.Main-Submit-Button {
+  background-color: #61dafb;
+  color: #61dafb;
+}
+
+.Navbar-Container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #333;
+  color: white;
+  height: 50px;
+  padding: 0 0 0 0;
+}
+
+
+.Navbar-Header {
+  font-size: 50px;
+  font-weight: bold;
+  color: rgb(0, 0, 0);
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  /* background-color: rgb(188, 175, 111); */
+  padding-bottom: 10%;
+}
+
+.Navbar-Button {
+  /* background-color: rgb(188, 175, 111); */
+  /* color: rgb(4, 4, 4); */
+  /* padding-left: 30%; */
+  padding-top: 2px;
+  padding-left: 20px;
+  color: #282c34;
+}
+
+.Navbar-Button-Color {
+  color: #282c34;
+  font-size: 20px;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.Navbar-Button-Left {
+  /* background-color: rgb(188, 175, 111); */
+  color: rgb(4, 4, 4);
+  padding-left: 10%;
+}
+
+.Navbar-Button-Right {
+  /* background-color: rgb(188, 175, 111); */
+  color: rgb(4, 4, 4);
+  padding-right: 10%;
+}
+
+.Navbar-Button-Center {
+  /* background-color: rgb(188, 175, 111); */
+  color: rgb(4, 4, 4);
+  /* padding-left: 30%;
+  padding-right: 30%; */
+}
+
+.Main-Background-OLD {
+  background-color: #E2E8DD;
+  height: 200vh;
+  min-height: 100vh;
+}
+
+.Main-Background{
+  /* background-image: url("https://images.unsplash.com/photo-1516849677043-ef67c9557e16?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80"); */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100%;
+  overflow: hidden;
+  width: 100%;
+  background-color: #E2E8DD;   
+  min-height: 100vh;
+}
+
+.Navbar-Background {
+  background-color: #B7D1DA;
+}
+
+/* A flexible grid to place cards containing text. Centered content */
+.Home-Box-Grid {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  padding: 10px;
+}
+
+.Home-Text-Box {
+  /* width: 300px;
+  height: 300px;
+  background-color: #B7D1DA;
+  border: 2px solid #B7D1DA; */
+  /* color: #B7D1DA; */
+  border-radius: 5px;
+  margin: 10px;
+  /* padding: 10px; */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  /* min-height: 900px; */
+}
+
+.Back-Button {
+  /* background-color: #B7D1DA; */
+  color: #131e22;
+  border: 2px solid #B7D1DA;
+  border-radius: 5px;
+  margin: 10px;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.Back-Button-Frame {
+  padding-top: 4px;
+  padding-left: 4px;
+  justify-content: left;
+  align-items: left;
+}
+
+/* .Back-Button-Frame {
+  position: relative;
+  top: 0;
+  right: 100px;
+} */
+
+/* .Home-Card {
+  height: 100%;
+} */
+
+.Home-Text-Box-Date-Field {
+  font-size: 18px;
+  /* font-weight: bold; */
+  color: rgb(179, 168, 168);
+  /* font-family: Georgia, 'Times New Roman', Times, serif; */
+  /* background-color: rgb(188, 175, 111); */
+  /* border: 2px solid rgb(0, 0, 0); */
+  /* border-radius: 5px;
+  padding-left: 10px;
+  width: 100%;
+  height: 100%; */
 }

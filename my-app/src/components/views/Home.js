@@ -15,38 +15,38 @@ function Home() {
   }, []);
 
   return (
-    <div className="App">
-      <header className="App-header">
-        <div>
-        <CCard style={{ width: '18rem' }}>
-          <CCardBody>
-            <CCardTitle style={{ color: 'black' }}>Card title</CCardTitle>
-            <CCardSubtitle className="mb-2 text-medium-emphasis">Card subtitle</CCardSubtitle>
-            <CCardText style={{ color: 'black' }}>
-              Some quick example text to build on the card title and make up the bulk of the card's content.
-            </CCardText>
-            <CCardLink href="#">Card link</CCardLink>
-            <CCardLink href="#">Another link</CCardLink>
-          </CCardBody>
-        </CCard>
-        </div>
-        <div>
-        <CCard style={{ width: '18rem' }}>
-          <CCardBody>
-            <CCardTitle style={{ color: 'black' }}>Card title</CCardTitle>
-            <CCardSubtitle className="mb-2 text-medium-emphasis">Card subtitle</CCardSubtitle>
-            <CCardText style={{ color: 'black' }}>
-              Some quick example text to build on the card title and make up the bulk of the card's content.
-            </CCardText>
-            <CCardLink href="#">Card link</CCardLink>
-            <CCardLink href="#">Another link</CCardLink>
-          </CCardBody>
-        </CCard>
-        </div>
-      
-        <p>WIP of a toolset to help Chemistry and Chemical Engineering students.</p>
-      </header>
+    <div>
+      <p>WIP of a toolset to help Chemistry and Chemical Engineering students.</p>
     </div>
+      
+
+        /* <div>
+        <CCard>
+          <CCardBody>
+            <CCardTitle>Card title</CCardTitle>
+            <CCardSubtitle className="mb-2 text-medium-emphasis">Card subtitle</CCardSubtitle>
+            <CCardText>
+              Some quick example text to build on the card title and make up the bulk of the card's content.
+            </CCardText>
+            <CCardLink href="#">Card link</CCardLink>
+            <CCardLink href="#">Another link</CCardLink>
+          </CCardBody>
+        </CCard>
+        </div>
+        <div>
+        <CCard>
+          <CCardBody>
+            <CCardTitle>Card title</CCardTitle>
+            <CCardSubtitle className="mb-2 text-medium-emphasis">Card subtitle</CCardSubtitle>
+            <CCardText>
+              Some quick example text to build on the card title and make up the bulk of the card's content.
+            </CCardText>
+            <CCardLink href="#">Card link</CCardLink>
+            <CCardLink href="#">Another link</CCardLink>
+          </CCardBody>
+        </CCard>
+        </div> */
+
   );
 }
 

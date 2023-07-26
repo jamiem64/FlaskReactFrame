@@ -16,20 +16,25 @@ function Next() {
 
 
   return (
-    <div className="App">
-      <header className="App-header">
-      <div>
-        { block.map((item) => {
-          return <div>
-            <p>{item.symbol}, {item.name}</p>
-            <p>{item.number}</p>
-            <p>RAM: {item.ram}</p>
-          </div>;
-        }) }
-      </div>
-      </header>
+    <div>
+      {/* <header className="App-header"> */}
+        <div>
+          <div className="parent">
+          { block.map((item) => {
+            return <div className='ElemTile'>
+              <p>{item.symbol}, {item.name}</p>
+              <p>{item.number}</p>
+              <p>RAM: {item.ram}</p>
+            </div>
+          }) }
+        </div>
+        </div>
+      
+      {/* </header> */}
     </div>
   );
+  
+  
 }
 
 
