@@ -12,12 +12,8 @@ function Next() {
     });
   }, []);
 
-  // var renderedOutput = block.map(item => <div> {item.name} </div>)
-
-
   return (
     <div>
-      {/* <header className="App-header"> */}
         <div>
           <div className="parent">
           { block.map((item) => {
@@ -29,8 +25,6 @@ function Next() {
           }) }
         </div>
         </div>
-      
-      {/* </header> */}
     </div>
   );
   

@@ -7,12 +7,12 @@ import '@coreui/coreui/dist/css/coreui.min.css'
 function Home() {
   const [block, setBlock] = useState(0);
 
-  useEffect(() => { 
-    fetch('http://127.0.0.1:5000/test').then(res => res.json()).then(data => {
-      setBlock(data.output);
-      console.log(data.output);
-    });
-  }, []);
+  // useEffect(() => { 
+  //   fetch('http://127.0.0.1:5000/test').then(res => res.json()).then(data => {
+  //     setBlock(data.output);
+  //     console.log(data.output);
+  //   });
+  // }, []);
 
   return (
     <div>
