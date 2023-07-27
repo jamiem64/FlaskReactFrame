@@ -1,9 +1,10 @@
 {
   "dependencies": {
-    "@coreui/coreui": "^4.2.6",
-    "@coreui/react": "^4.9.1",
+    "@coreui/coreui": "^5.0.0-alpha.1",
+    "@coreui/react": "^5.0.0-alpha.0",
     "axios": "^1.4.0",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "react-native": "^0.72.3"
   }
 }

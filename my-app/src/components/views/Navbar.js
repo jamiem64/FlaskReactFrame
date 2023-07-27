@@ -47,6 +47,7 @@ return (
           <CNavbarNav>
               <Link className="Navbar-Button" to="/">Home</Link>
               <Link className="Navbar-Button" to="/Elements">Elements</Link>
+              <Link className="Navbar-Button" to="/MassBalanceSolver">Mass Balances</Link>
           </CNavbarNav>
       </CContainer>
     </CNavbar>
