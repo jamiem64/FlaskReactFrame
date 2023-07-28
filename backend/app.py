@@ -2,6 +2,7 @@ from flask import Flask, request
 from flask import jsonify
 from flask_cors import CORS
 import logging
+import requests
 
 from NewFolder import data_getter
 from ToolFunctions import mass_balance_solver
@@ -40,6 +41,18 @@ def MassBalanceSolver():
   
   return jsonify(output)
   
+# @app.route('/GetElementsArray')
+# def get_elements():
+#     # Call the API endpoint
+#     response = requests.get('https://periodic-table-elements-info.herokuapp.com/elements')
+
+#     # Check if the response was successful
+#     if response.status_code == 200:
+#         # Return the JSON data
+#         return jsonify(response.json())
+#     else:
+#         # Return an error message
+#         return 'Error: Failed to retrieve data from API'
 
 if __name__ == "__main__":
   app.run()

@@ -26,4 +26,4 @@ Therefore, we need 40 g of oxygen to completely burn 10 g of methane.
 Stoichiometric equations are useful for predicting the outcomes of chemical reactions, such as how much product can be formed from a given amount of reactants, or how much reactant is needed to produce a desired amount of product. They are also important for understanding the relationships between different substances in chemistry, such as their composition, structure, and properties.
 `;
 
-export default StoicEqnsExplainedText 
+export default StoicEqnsExplainedText;

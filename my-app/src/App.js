@@ -12,6 +12,7 @@ import StoicSolver from './components/views/StoicSolver';
 // import PeriodicTable from './components/views/Tools/PeriodicTable'
 
 import StoichiometricEquationsExplained from './components/views/Knowledge/StoichiometricEquationsExplained';
+import ElementsLibrary from './components/views/Knowledge/ElementsLibrary';
 
  
 function App() {
@@ -27,6 +28,7 @@ function App() {
                 {/* <Route path='/Tools/PeriodicTable' element={<PeriodicTable />} /> */}
 
                 <Route path='/Knowledge/StoichiometricEquationsExplained' element={<StoichiometricEquationsExplained />} />
+                <Route path='/Knowledge/ElementsLibrary' element={<ElementsLibrary />} />
             </Routes>
         </Router>
     );

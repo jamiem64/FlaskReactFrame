@@ -20,11 +20,11 @@ function Home() {
 
         <div className='HomePageSectionHeader'>Knowledge:</div>
         <div>
+          <Link className="LinkButton" to="/Knowledge/ElementsLibrary">Elements Library</Link>
+        </div>
+        <div>
           <Link className="LinkButton" to="/Knowledge/StoichiometricEquationsExplained">Stoichiometric Equations Explained</Link>
         </div>
-        {/* <div>
-          <Link className="LinkButton" to="/Tools/StoicSolver">Stoichiometry Equation Balancer</Link>
-        </div> */}
 
 
       </div>
