@@ -21,7 +21,7 @@ def PeriodicElemsDict():
   output = data_getter.get_periodic_dict()
   return jsonify({'output': output})
 
-@app.route("/MassBalanceSolver", methods=["POST"], strict_slashes=False)
+@app.route("/Tools/StoicSolver", methods=["POST"], strict_slashes=False)
 def MassBalanceSolver():
   reac1 = request.json['reac1'] # obtain reactants + products from incoming request
   reac2 = request.json['reac2']
