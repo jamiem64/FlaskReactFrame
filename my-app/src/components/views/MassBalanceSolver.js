@@ -1,7 +1,7 @@
 import React, {Component, useState, useEffect} from 'react';
 // import { CCard, CCardBody, CCardTitle, CCardSubtitle, CCardText, CCardLink } from '@coreui/react';
 import '@coreui/coreui/dist/css/coreui.min.css'
-// import '/App.css';
+import '../../App.css';
 // import { 
 //   CForm,
 //   CFormInput,
@@ -33,6 +33,7 @@ function MassBalanceSolver() {
 
 
 		async function sendData(reac1, reac2, prod1, prod2) {
+			
 			await fetch('http://localhost:5000/MassBalanceSolver', {
 										method: 'POST',
 										//credentials: 'include',
@@ -68,71 +69,73 @@ function MassBalanceSolver() {
 
   return (
     <div>
-      <p>Mass Balance Solver</p>
+      <div className='ToolPageTitle'>Mass Balance Solver</div>
+	  <div className='ToolPageTitleDivider'></div>
       <div>
-			<form onSubmit = {handleSubmit} >
+			<form onSubmit = {handleSubmit} className='FormRow'>
 
-				<label htmlFor="title" className="form-label">Reactant 1</label>
-				<input 
+				{/* <label htmlFor="title" className="form-label">Reactant 1</label> */}
+				<input
 				type="text"
-				className="form-control" 
+				className="FormInput" 
 				placeholder ="Enter title"
 				value={reac1}
 				onChange={(e)=>setReac1(e.target.value)}
 				required
 				/>
 
-				<label htmlFor="title" className="form-label">Reactant 2</label>
+				<div className='FormulaSyntaxTxt'> + </div>
+
+				{/* <label htmlFor="title" className="form-label">Reactant 2</label> */}
 				<input 
 				type="text"
-				className="form-control" 
+				className="FormInput" 
 				placeholder ="Enter title"
 				value={reac2}
 				onChange={(e)=>setReac2(e.target.value)}
 				required
 				/>
 
-				<label htmlFor="title" className="form-label">Product 1</label>
+				<div className='FormulaSyntaxTxt'> {'----->'} </div>
+
+				{/* <label htmlFor="title" className="form-label">Product 1</label> */}
 				<input 
 				type="text"
-				className="form-control" 
+				className="FormInput" 
 				placeholder ="Enter title"
 				value={prod1}
 				onChange={(e)=>setProd1(e.target.value)}
 				required
 				/>
 
-				<label htmlFor="title" className="form-label">Product 2</label>
+				<div className='FormulaSyntaxTxt'> + </div>
+
+				{/* <label htmlFor="title" className="form-label">Product 2</label> */}
 				<input 
 				type="text"
-				className="form-control" 
+				className="FormInput" 
 				placeholder ="Enter title"
 				value={prod2}
 				onChange={(e)=>setProd2(e.target.value)}
 				required
 				/>
 
-				{/* <label htmlFor="body" className="form-label">Body</label>
-				<textarea 
-				className="form-control" 
-				placeholder ="Enter body" 
-				rows='6'
-				value={body}
-				onChange={(e)=>setBody(e.target.value)}
-				required
+				<button
+				className="FormSubmitButton"
 				>
-				</textarea> */}
-
-				<button 
-				className="btn btn-primary mt-2"
-				>
-				Publish article</button>
+				Balance</button>
 
 </form>
       </div>
-			<div>
-				<span>Output: {resp}</span>
+	  	<div>
+		  	<div className='FormOutputArea'>
+				<span className='FormOutputText'>Output:</span>
 			</div>
+			<div>
+				<span className='FormOutputEqn'>{resp}</span>
+			</div>
+		</div>
+			
     </div>
   );
 }

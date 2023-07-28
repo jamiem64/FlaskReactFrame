@@ -24,4 +24,9 @@ def TEST_get_string_elems():
     return output
 
 
-get_periodic_dict()
+# get_periodic_dict()
+
+def main():
+    print(get_periodic_table())
+
+main()

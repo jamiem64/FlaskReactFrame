@@ -65,8 +65,34 @@
   font-size: 12px;
 }
 
-.Navbar-Button {
-  background-color: #4CAF50;
+/* form {
+  display: flex;
+  justify-content: center;
+} */
+
+.FormRow {
+  display: flex;
+  justify-content: center;
+}
+
+/* label {
+  width: 100px;
+} */
+
+.FormLabel {
+  width: 100px;
+}
+
+/* input[type="text"] {
+  width: 200px;
+} */
+
+.FormInput {
+  width: 200px;
+}
+
+.FormSubmitButton {
+  background-color: #131e22;
   border: none;
   color: white;
   padding: 10px 20px;
@@ -76,8 +102,77 @@
   font-size: 16px;
   margin: 4px 2px;
   cursor: pointer;
+  border-radius: 4px;
+  /* padding-left: 10px; */
+  margin-left: 20px;
 }
 
+.FormSubmitButton:hover {
+  background-color: #f1b213;
+}
+
+.FormulaSyntaxTxt {
+  padding-left: 20px;
+  padding-right: 20px;
+  text-align: center;
+  font-size: 30px;
+}
+
+.ToolPageTitle {
+  text-align: center;
+  font-size: 52px;
+}
+
+.ToolPageTitleDivider {
+  width: 80%;
+  margin: 0 auto;
+  background-color: black;
+  height: 1px;
+  /* position: absolute; */
+  /* top: 50%; */
+  transform: translateY(-50%);
+  margin-bottom: 30px;
+}
+
+
+.Navbar-Button {
+  background-color: #131e22;
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.Navbar-Button:hover {
+  background-color: #4CAF50;
+}
+
+.FormOutputText {
+  font-size: 35px;
+  text-align: center;
+  text-decoration: none;
+  padding-left: 70px;
+}
+
+.FormOutputEqn {
+  font-size: 50px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  padding-left: 50px;
+}
+
+.FormOutputArea {
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+}
 
 
 .Main-Container {
@@ -156,15 +251,6 @@
   font-family: Georgia, 'Times New Roman', Times, serif;
   /* background-color: rgb(188, 175, 111); */
   padding-bottom: 10%;
-}
-
-.Navbar-Button {
-  /* background-color: rgb(188, 175, 111); */
-  /* color: rgb(4, 4, 4); */
-  /* padding-left: 30%; */
-  padding-top: 2px;
-  padding-left: 20px;
-  color: #282c34;
 }
 
 .Navbar-Button-Color {
