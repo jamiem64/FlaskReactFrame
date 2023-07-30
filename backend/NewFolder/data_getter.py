@@ -38,8 +38,8 @@ def TEST_get_string_elems():
 
 # get_periodic_dict()
 
-def main():
-    # print(get_periodic_table())
-    get_elements()
+# def main():
+#     # print(get_periodic_table())
+#     # get_elements()
 
-main()
+# main()

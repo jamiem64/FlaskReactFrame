@@ -135,6 +135,23 @@
   margin-bottom: 30px;
 }
 
+.ElementLibraryDivider {
+  width: 100%;
+  margin: 0 auto;
+  background-color: black;
+  height: 0.1rem;
+  /* position: absolute; */
+  /* top: 50%; */
+  transform: translateY(-50%);
+  margin-bottom: 3rem;
+  margin-top: 1rem;
+}
+
+.ElementLibraryHeader {
+  font-size: 2rem;
+  font-weight: bolder;
+}
+
 .KnowledgeTextPara {
   padding-top: 1rem;
   font-size: 1rem;
