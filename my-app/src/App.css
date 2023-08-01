@@ -162,6 +162,7 @@
   align-items: stretch; */
   position: relative;
   background-color: white;
+  /* padding-bottom: 5rem; */
 }
 .PageContentChild {
   margin: auto;
@@ -175,6 +176,10 @@
   left: 50%;
   /* Add this line */
   transform: translate(-50%, -50%);
+}
+
+.PageContentEnd {
+  padding-bottom: 2rem
 }
 
 .HomePageSectionHeader {

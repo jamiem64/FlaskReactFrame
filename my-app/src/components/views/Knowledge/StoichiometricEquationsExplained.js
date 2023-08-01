@@ -22,7 +22,8 @@ function StoichiometricEquationsExplained() {
       <div className='PageContentChild'>
         <div className='HomePageSectionHeader'>Stoichiometric Equations:</div>
 					<div>{paragraphArray.map(para => <div className='KnowledgeTextPara'>{para}</div>)}</div>
-      </div>
+		<div className='PageContentEnd'></div>
+	  </div>
     </div>
   );
 }

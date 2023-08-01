@@ -11,9 +11,9 @@ function Home() {
     <div className='PageContentParent'>
       <div className='PageContentChild'>
         <div className='HomePageSectionHeader'>Tools:</div>
-        <div>
+        {/* <div>
           <Link className="LinkButton" to="/Tools/Elements">Elements</Link>
-        </div>
+        </div> */}
         <div>
           <Link className="LinkButton" to="/Tools/StoicSolver">Stoichiometry Equation Balancer</Link>
         </div>
@@ -24,6 +24,9 @@ function Home() {
         </div>
         <div>
           <Link className="LinkButton" to="/Knowledge/StoichiometricEquationsExplained">Stoichiometric Equations Explained</Link>
+        </div>
+        <div>
+          <Link className="LinkButton" to="/Knowledge/KnowledgeBank">Knowledge Bank</Link>
         </div>
 
 

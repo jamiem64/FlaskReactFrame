@@ -10,24 +10,15 @@ import ElementsData from '../../../content/knowledge/ElementsData';
 function ElementsLibrary() {
 	const [jsonData, setJsonData] = useState([]);
   const [dataLoaded, setDataLoaded] = useState(false);
-	// const paragraphArray = [];
-	// const paragraphs = text.split('\n\n');
 
 	useEffect(() => {
-		// setJsonData(ElementsData)
     if (dataLoaded === false) {
       ElementsData.forEach((element) => {
         jsonData.push(element);
       });
       setDataLoaded(true);
     }
-        console.log('Elements Data' + ElementsData)
-        console.log('json Data' + jsonData)
 	}, []);
-
-	// ElementsData.forEach((element) => {
-	// 	jsonData.push(element);
-	// });
 
   return (
     <div className='PageContentParent'>
