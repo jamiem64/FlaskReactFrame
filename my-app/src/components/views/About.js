@@ -3,17 +3,15 @@ import { CCard, CCardBody, CCardTitle, CCardSubtitle, CCardText, CCardLink } fro
 import '@coreui/coreui/dist/css/coreui.min.css'
 import '../../App.css';
 
-import TemplatePageText from '../../content/TemplatePageText';
+import AboutPageText from '../../content/AboutPageText';
 
-
-function Template() {
-
-  const [text, setText] = useState('');
+function About() {
+    const [text, setText] = useState('');
 	const paragraphArray = [];
 	const paragraphs = text.split('\n\n');
 
 	useEffect(() => {
-		setText(TemplatePageText)
+		setText(AboutPageText)
 	}, [text]);
 
 	paragraphs.forEach((paragraph) => {
@@ -23,21 +21,11 @@ function Template() {
   return (
     <div className='PageContentParent'>
       <div className='PageContentChild'>
-        <div className='HomePageSectionHeader'>Template:</div>
+        <div className='HomePageSectionHeader'>About:</div>
 					<div>{paragraphArray.map(para => <div className='KnowledgeTextPara'>{para}</div>)}</div>
       </div>
     </div>
-
-  // return (
-  //   <div className='PageContentParent'>
-  //     <div className='PageContentChild'>
-  //       <div className='HomePageSectionHeader'>Page Template:</div>
-  //       <div>To add a new page:</div>
-  //       <div>1: Add new link to App.js and import component.</div>
-  //       <div>2: Add new link to Navbar.js.</div>
-  //     </div>
-  //   </div>
   );
 }
 
-export default Template;
+export default About;

@@ -5,7 +5,9 @@ import { BrowserRouter as Router, Routes, Route }
     from 'react-router-dom';
 
 import Home from './components/views/Home';
+import About from './components/views/About';
 import Template from './components/views/Template';
+
 
 import Elements from './components/views/Elements';
 import StoicSolver from './components/views/StoicSolver';
@@ -21,6 +23,7 @@ function App() {
             <Navbar />
             <Routes>
                 <Route exact path='/' element={<Home />} />
+                <Route path='/About' element={<About />} />
                 <Route path='/Template' element={<Template />} />
 
                 <Route path='/Tools/Elements' element={<Elements />} />

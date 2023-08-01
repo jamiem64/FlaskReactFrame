@@ -20,21 +20,6 @@ import {
   CDropdownDivider,
 } from '@coreui/react';
 
-// function Navbar() {
-//   return (
-//     <nav>
-//       <div className="Navbar-Container">
-//         <Link className="Navbar-Button-Left" to="/">Home</Link>
-//         <Link className="Navbar-Button-Center" to="/Elements">Elements</Link>
-//         <Link className="Navbar-Button-Right" to="/WIP">WIP</Link>
-//       </div>
-        
-      
-//     </nav>
-//   );
-// }
-
-// export default Navbar;
 
 function Navbar() {
 
@@ -46,6 +31,7 @@ return (
       <CContainer fluid>
           <CNavbarNav>
               <Link className="Navbar-Button" to="/">Home</Link>
+              <Link className="Navbar-Button" to="/About">About</Link>
               <Link className="Navbar-Button" to="/Template">Template</Link>
           </CNavbarNav>
       </CContainer>
