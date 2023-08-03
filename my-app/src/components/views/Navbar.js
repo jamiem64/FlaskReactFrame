@@ -33,6 +33,7 @@ return (
               <Link className="Navbar-Button" to="/">Home</Link>
               <Link className="Navbar-Button" to="/About">About</Link>
               <Link className="Navbar-Button" to="/Template">Template</Link>
+              <Link className="Navbar-Button" to="/Tests/StoicBalanceTest">StoicBalanceTest</Link>
           </CNavbarNav>
       </CContainer>
     </CNavbar>

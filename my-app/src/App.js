@@ -17,6 +17,8 @@ import StoichiometricEquationsExplained from './components/views/Knowledge/Stoic
 import ElementsLibrary from './components/views/Knowledge/ElementsLibrary';
 import KnowledgeBank from './components/views/Knowledge/KnowledgeBank';
 
+import StoicBalanceTest from './components/views/Testing/StoicBalanceTest';
+
  
 function App() {
     return (
@@ -34,6 +36,8 @@ function App() {
                 <Route path='/Knowledge/StoichiometricEquationsExplained' element={<StoichiometricEquationsExplained />} />
                 <Route path='/Knowledge/ElementsLibrary' element={<ElementsLibrary />} />
                 <Route path='/Knowledge/KnowledgeBank' element={<KnowledgeBank />} />
+
+                <Route path='/Tests/StoicBalanceTest' element={<StoicBalanceTest />} />
             </Routes>
         </Router>
     );
