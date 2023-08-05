@@ -1,4 +1,5 @@
 from chempy import balance_stoichiometry
+import json
 
 from BackendHelperFuncs import helper_funcs
 
@@ -13,12 +14,40 @@ def stoic_knowledge_text():
 
     reac, prod = balance_stoichiometry({reactants[0], reactants[1]}, {products[0], products[1]})
 
+    answer = {
+        'reactants': [],
+        'products': []
+    }
+    for key, value in reac.items():
+        tmp = {}
+        tmp[key] = str(value)
+        answer['reactants'].append(tmp)
+
+    for key, value in prod.items():
+        tmp = {}
+        tmp[key] = str(value)
+        answer['products'].append(tmp)
+
+
     # reac, prod = balance_stoichiometry(reac_dict, prod_dict)
 
     output = ""
     output = helper_funcs.parse_stoic_output(reac, output)
     output += ' -> '
     output = helper_funcs.parse_stoic_output(prod, output)
+
+    output_dict = {
+        'question_str': output_start_formula,
+        'answer_str': output,
+        'answer_json': answer
+    }
+
+    # output = [output_dict]
+
+    return output_dict
+
+def test_function():
+    return "Test Success"
 
     # output_reac_dict = {}
     # for reac in reactants:
@@ -31,15 +60,8 @@ def stoic_knowledge_text():
     # output = ""
     # formula = helper_funcs.parse_stoic_output()
 
-    output = {
-        'formula': output_start_formula,
-        'answer': output
-    }
+# def main():
+#     stoic_knowledge_text()
 
-    return stoic_knowledge_text
-
-def main():
-    stoic_knowledge_text()
-
-main()
+# main()
 

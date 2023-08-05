@@ -7,7 +7,8 @@ import json
 
 from NewFolder import data_getter
 from ToolFunctions import mass_balance_solver
-from TestFunctions import stoic_balance_test
+
+from TestFunctions.stoic_balance_test import stoic_knowledge_text
 
 app = Flask(__name__)
 
@@ -45,25 +46,31 @@ def MassBalanceSolver():
 
 @app.route("/Tests/StoicBalanceTest", methods=["GET"], strict_slashes=False)
 def StoicBalanceKnowledgeTest():
-  # reac1 = request.json['reac1'] # obtain reactants + products from incoming request
-  # reac2 = request.json['reac2']
-  # prod1 = request.json['prod1']
-  # prod2 = request.json['prod2']
 
-  # output_str = mass_balance_solver.two_reacs_two_prods_bal( # pass vars to func to get balanced rxn as str
-  #   {reac1, reac2}, 
-  #   {prod1, prod2}, 
-  #   )
+  output = stoic_knowledge_text()
+  print(output)
 
-  output = stoic_balance_test.stoic_knowledge_text()
-
-  output = { # construct output of endpoint
+  output_dict = { # construct output of endpoint 
     'output': output,
     'status': 'success',
   }
+
+  # output = jsonify(output_dict)
+
+  return output_dict
   
-  # return jsonify(output)
-  return json.dumps(output)
+  # return json.dumps({
+  #   'output': output,
+  #   'status': 'success'
+  # })
+
+  # return jsonify({
+  #   'output': output,
+  #   'status': 'success'
+  # })
+  # return json.dumps(str(output_dict))
+  # return output_dict
+  # return json.dumps(output_dict)
   
 # @app.route('/GetElementsArray')
 # def get_elements():

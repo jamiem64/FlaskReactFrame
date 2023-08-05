@@ -11,59 +11,133 @@ import '@coreui/coreui/dist/css/coreui.min.css'
 // import APIService from '../api/APIService';
 
 function StoicBalanceTest() {
-  // const [block, setBlock] = useState(0);
-	// const [title, setTitle] = useState("Start test")
-	// const [body, setBody] = useState("Start test")
+	const [block, setBlock] = useState([]);
+	const [loading, setLoading] = useState(true);
 
-	// const [reac1, setReac1] = useState("Fe2O3")
-	// const [reac2, setReac2] = useState("CO")
-	// const [prod1, setProd1] = useState("Fe")
-	// const [prod2, setProd2] = useState("CO2")
+	const [questionStr, setQuestionStr] = useState("Question String Start");
+	const [answerStr, setAnswerStr] = useState("");
+	const [answerJson, setAnswerJson] = useState({});
 
-	const [resp, setResp] = useState("");
-	const [outputText, setOutputText] = useState("");
+	const [reacArray, setReacArray] = useState([]);
+	const [prodArray, setProdArray] = useState([]);
 
-	//   useEffect(() => { 
-	// 		console.log(resp)
-	// 		// setOutputText(resp.output)
-	// 	}, [resp]);
+	const [outputHtml, setOutputHtml] = useState(
+		<div>
+			Loading...
+		</div>
+	)
 
-    useEffect(() => { 
-        fetch('http://127.0.0.1:5000/Tests/StoicBalanceTest')
-    }, []);
+	useEffect(() => { 
+		fetch('http://127.0.0.1:5000/Tests/StoicBalanceTest')
+			.then(res => res.json())
+			.then(data => {
+				setQuestionStr(data.output.question_str);
+				setAnswerStr(data.output.answer_str);
 
-	// 	async function sendData(reac1, reac2, prod1, prod2) {
-			
-	// 		await fetch('http://localhost:5000/Tools/StoicBalanceTest', {
-	// 									method: 'POST',
-	// 									//credentials: 'include',
-	// 									headers: {'Content-Type': 'application/json'},
-	// 									body: JSON.stringify({
-	// 										reac1: reac1, 
-	// 										reac2: reac2,
-	// 										prod1: prod1,
-	// 										prod2: prod2,
-	// 									}),
-	// 								})
-	// 								.then(res => res.json())
-	// 								.then((data) => {
-	// 									setResp(data.output)
-	// 								})
-	// 								.catch(console.log)
-	// }
+				// setAnswerJson(data.output.answer_json);
+				setReacArray(data.output.answer_json.reactants)
+				setProdArray(data.output.answer_json.products)
+				setLoading(false);
+				
+				console.log('reacArray', reacArray)
+			});
+	}, []);
 
+	useEffect(() => { 
+		if (!loading) {
+			setOutputHtml(
+				<div>
+					<div className='ToolPageTitle'>Stoichiometry Balance Test</div>
+						<div className='ToolPageTitleDivider'></div>
+						<div className='ToolPageTitle'>{questionStr}</div>
+						<div className='ToolPageTitleDivider'></div>
+							<div>
+							<form className='FormRow'>
 
-	// const handleSubmit=(event)=>{ 
-	// 	event.preventDefault()
-	// 	sendData(reac1, reac2, prod1, prod2)
-	// 	setTitle('')
-	// 	setBody('')
-	// }
+								<div>
+									<span>{Object.keys(reacArray[0])}</span>
+									<input
+									type="text"
+									className="FormInput" 
+									placeholder ="Enter title"
+									// value={Object.keys(reacArray[0])}
+									// onChange={(e)=>setReac1(e.target.value)}
+									required
+									/>
+								</div>
 
-  return (
-		<div></div>
-    
-  );
+								<div className='FormulaSyntaxTxt'> + </div>
+
+								<div>
+									<span>{Object.keys(reacArray[1])}</span>
+									<input 
+									type="text"
+									className="FormInput" 
+									placeholder ="Enter title"
+									// value={Object.keys(reacArray[1])}
+									// onChange={(e)=>setReac2(e.target.value)}
+									required
+									/>
+								</div>
+
+								<div className='FormulaSyntaxTxt'> {'>'} </div>
+
+								<div>
+									<span>{Object.keys(prodArray[0])}</span>
+									<input 
+									type="text"
+									className="FormInput" 
+									placeholder ="Enter title"
+									// value={Object.keys(prodArray[0])}
+									// onChange={(e)=>setProd1(e.target.value)}
+									required
+									/>
+								</div>
+
+								<div className='FormulaSyntaxTxt'> + </div>
+
+								<div>
+									<span>{Object.keys(prodArray[1])}</span>
+									<input 
+									type="text"
+									className="FormInput" 
+									placeholder ="Enter title"
+									// value={Object.keys(prodArray[1])}
+									// onChange={(e)=>setProd2(e.target.value)}
+									required
+									/>
+								</div>
+
+								<button
+								className="FormSubmitButton"
+								>
+								Submit</button>
+
+							</form>
+						</div>
+				</div>
+			)
+			console.log('reacArray ', reacArray)
+		}
+	}, [loading]);
+
+	// useEffect(() => { 
+	// 	console.log('reacArray ' + toString(reacArray))
+	// }, [reacArray]);
+
+	return (
+		<div className='PageContentParent'>
+			<div className='PageContentChild'>
+				<div>{outputHtml}</div>
+				
+
+							<div>
+								
+						</div>
+			</div>
+		</div>
+	)
+
 }
 
 
