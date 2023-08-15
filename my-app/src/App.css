@@ -36,3 +36,24 @@
     transform: rotate(360deg);
   }
 }
+
+.ActionButton {
+  background-color: blue;
+  color: white;
+  padding: 10px 20px; 
+  border-radius: 5px;
+  margin: 10px 20px;
+}
+
+.NextWeekButton {
+  background-color: green;
+  color: white;
+  padding: 10px 20px; 
+  border-radius: 5px;
+  margin: 10px 20px;
+}
+
+.IncreaseProductionButton {
+  background-color: white;
+  padding-left: 4rem;
+}
