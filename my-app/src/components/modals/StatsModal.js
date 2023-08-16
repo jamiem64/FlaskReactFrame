@@ -43,7 +43,7 @@ function StatsModal(props) {
     <CModal visible={visible} onClose={() => setVisible(false)}>
       <CModalHeader onClose={() => setVisible(false)}>
         <CModalTitle>Village Stats</CModalTitle>
-      </CModalHeader>
+      </CModalHeader> 
       <CModalBody>
       <CCard style={{ width: '18rem' }}>
         <CCardHeader>Weekly Change</CCardHeader>
