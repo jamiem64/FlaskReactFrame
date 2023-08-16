@@ -4,6 +4,8 @@ import '@coreui/coreui/dist/css/coreui.min.css'
 
 import TestModal from './components/TestModal';
 import BuildModal from './components/modals/BuildModal';
+import StatsModal from './components/modals/StatsModal';
+import VillagersModal from './components/modals/VillagersModal';
 
 
 function App() {
@@ -98,6 +100,16 @@ function App() {
               Next Week
             </button>
             <BuildModal
+              foodStored={foodStored}
+              waterStored={waterStored}
+              woodStored={woodStored}
+              stoneStored={stoneStored}
+
+              setFoodStored={setFoodStored}
+              setWaterStored={setWaterStored}
+              setWoodStored={setWoodStored}
+              setStoneStored={setStoneStored}
+
               foodProd={foodProd}
               waterProd={waterProd}
               woodProd={woodProd}
@@ -109,12 +121,43 @@ function App() {
               setStoneProd={setStoneProd}
 
             />
-            <button className='ActionButton'>
-              View Stats
-            </button>
-            <button className='ActionButton'>
-              Action 4
-            </button>
+            <VillagersModal
+              foodStored={foodStored}
+              waterStored={waterStored}
+              woodStored={woodStored}
+              stoneStored={stoneStored}
+
+              setFoodStored={setFoodStored}
+              setWaterStored={setWaterStored}
+              setWoodStored={setWoodStored}
+              setStoneStored={setStoneStored}
+
+              foodProd={foodProd}
+              waterProd={waterProd}
+              woodProd={woodProd}
+              stoneProd={stoneProd}
+
+              setFoodProd={setFoodProd}
+              setWaterProd={setWaterProd}
+              setWoodProd={setWoodProd}
+              setStoneProd={setStoneProd}
+
+            />
+            <StatsModal
+              villagePop={villagePop}
+              
+              foodProd={foodProd}
+              waterProd={waterProd}
+              woodProd={woodProd}
+              stoneProd={stoneProd}
+
+              setFoodProd={setFoodProd}
+              setWaterProd={setWaterProd}
+              setWoodProd={setWoodProd}
+              setStoneProd={setStoneProd}
+
+            />
+            
           </div>
           
         </div>
