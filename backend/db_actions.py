@@ -2,24 +2,16 @@ import sqlite3
 from sqlite3 import Error
 import pandas as pd
 
-conn = sqlite3.connect('backend/db/test_database')
+conn = sqlite3.connect('backend/saves/JamieGame1')
 
 c = conn.cursor()
 
 
 def create_table(sql_query):
     c.execute(sql_query)
-    # c.execute('''
-    #       CREATE TABLE IF NOT EXISTS products
-    #       ([product_id] INTEGER PRIMARY KEY, [product_name] TEXT)
-    #       ''')
-          
-    # c.execute('''
-    #         CREATE TABLE IF NOT EXISTS prices
-    #         ([product_id] INTEGER PRIMARY KEY, [price] INTEGER)
-    #         ''')
-    
     conn.commit()
+    print("Table created OR already exists")
+    return
 
 def add_to_table(
         table_name: str,
@@ -53,49 +45,82 @@ def add_to_table(
                     exe_str += f"'{val}',"
 
 
-    print('.')
 
     c.execute(exe_str)
 
     conn.commit()
 
-def display_table(): 
-    c.execute('''
-            SELECT
-            a.product_name,
-            b.price
-            FROM products a
-            LEFT JOIN prices b ON a.product_id = b.product_id
-            ''')
+    print(f"{len(values)} records added to table '{table_name}'")
 
-    df = pd.DataFrame(c.fetchall(), columns=['product_name','price'])
+def display_table(table_name, cols): 
+    c.execute(f'''SELECT * FROM {table_name}''')
+    # c.execute('''
+    #         SELECT
+    #         a.product_name,
+    #         b.price
+    #         FROM products a
+    #         LEFT JOIN prices b ON a.product_id = b.product_id
+    #         ''')
+
+    df = pd.DataFrame(c.fetchall(), columns=cols)
     print (df)
 
+def init_save_file():
+    table_name = 'villagers'
+    table_cols = [
+        'villager_id',
+        'name',
+        'gender',
+        'age',
+        'food_skill',
+        'water_skill',
+        'wood_skill',
+        'stone_skill',
+        'build_skill',
+        'exped_skill',
+    ]
+    table_test_data = [
+        ['NULL','Benjamin','M',18,2,2,2,2,2,2],
+        ['NULL','Adolfo','M',24,2,2,2,2,2,2],
+        ['NULL','Gaped','F',21,2,2,2,2,2,2],
+        ['NULL','Busted','M',10029,2,2,2,2,2,2],
+        ['NULL','Benjamin2','M',18,2,2,2,2,2,2],
+        ['NULL','Adolfo2','M',24,2,2,2,2,2,2],
+        ['NULL','Gaped2','F',21,2,2,2,2,2,2],
+        ['NULL','Busted2','M',10029,2,2,2,2,2,2]
+    ]
+    create_query = '''
+        CREATE TABLE IF NOT EXISTS villagers
+        (
+            [villager_id] INTEGER PRIMARY KEY, 
+            [name] TEXT,
+            [gender] TEXT,
+            [age] INTEGER,
+            [food_skill] INTEGER,
+            [water_skill] INTEGER,
+            [wood_skill] INTEGER,
+            [stone_skill] INTEGER,
+            [build_skill] INTEGER,
+            [exped_skill] INTEGER
+        )
+    '''
+    create_table(create_query)
+    add_to_table(
+        table_name,
+        table_cols, 
+        table_test_data
+    )
+    display_table(table_name, table_cols)
+    
 
 if __name__ == '__main__':
-    add_to_table(
-        'products',
-        ['product_id','product_name'],
-        [['NULL','Bleurghhhh',],['NULL','Bleurghhhhghghgyygy']]
-    )
-
-    display_table()
+    init_save_file()
+    # add_to_table(
+    #     'products',
+    #     ['product_id','product_name'],
+    #     [['NULL','Bleurghhhh',],['NULL','Bleurghhhhghghgyygy']]
+    # )
+    # display_table()
     # add_to_table()
     # create_table()
     # create_connection('backend/db/test_database')
-
-
-
-
-# def create_connection(db_file):
-#     # create a db connection to a SQLite db
-#     conn = None
-#     try:
-#         conn = sqlite3.connect(db_file)
-#         c = conn.cursor()
-#         print(sqlite3.version)
-#     except Error as e:
-#         print(e)
-#     finally:
-#         if conn:
-#             conn.close()
