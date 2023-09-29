@@ -1,5 +1,4 @@
 import requests
-import json
 
 from global_rate_limit import check_limit
 import db_actions
@@ -18,11 +17,9 @@ headers = {
 def get_stocks_info():
     output = []
     stocks_list = get_stocks_list()
-    for i, item in enumerate(stocks_list.get('data')[0:300]):
+    for i, item in enumerate(stocks_list.get('data')[400:1000]): # [x:y] to grab subset of total records
         item = get_stocks_logo(item)
         output.append(item)
-        # del stocks_list.get('data')[i]
-        # stocks_list.get('data')[i] = item
         print(f"Processing record {i} of {len(stocks_list.get('data'))}")
     return output
 

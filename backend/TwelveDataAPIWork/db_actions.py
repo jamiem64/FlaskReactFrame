@@ -5,18 +5,6 @@ import pandas as pd
 conn = sqlite3.connect('database.db')
 c = conn.cursor() 
 
-# def create_connection(db_file):
-#     """ create a database connection to a SQLite database """
-#     conn = None
-#     try:
-#         conn = sqlite3.connect(db_file)
-#         print(sqlite3.version)
-#     except Error as e:
-#         print(e)
-#     finally:
-#         if conn:
-#             conn.close()
-
 def create_table(sql_query):
     try:
         c.execute(sql_query)
@@ -56,7 +44,16 @@ def clear_table():
     c.execute(query)
     conn.commit()
 
-def main():
-    display_table('stocks_info', ['symbol','name','currency','exchange','mic_code','country','type','url'])
+def get_full_table(
+        table_name,
+    ):
+    # conn = sqlite3.connect('database.db')
+    # c = conn.cursor() 
 
-main()
+    query = f"SELECT * FROM {table_name}"
+    df = pd.read_sql(query, conn)
+    # df = pd.read_sql_query(query, conn)
+
+    return df
+
+get_full_table('stocks_info')
